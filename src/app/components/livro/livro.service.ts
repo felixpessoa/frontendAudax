@@ -1,16 +1,18 @@
-import { livro } from './livro.model';
+import { Livro } from './livro.model';
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
+import { ThrowStmt } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LivroService {
 
-  baseUrl = "http://localhost:8080/api/livros"
+  baseUrl = "https://audax-biblioteca.herokuapp.com/api/livros"
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
@@ -22,8 +24,22 @@ export class LivroService {
     })
   }
 
-  create(livro: livro): Observable<livro>{
-    return this.http.post<livro>(this.baseUrl, livro)
+  create(livro: Livro): Observable<Livro>{
+    return this.http.post<Livro>(this.baseUrl, livro)
+  }
+
+  read(): Observable<Livro[]> {
+    return this.http.get<Livro[]>(this.baseUrl)
+  }
+
+  readById(id: string): Observable<Livro> {
+    const url = '${this.baseUrl}/${id}'
+    return this.http.get<Livro>(url)
+  }
+
+  update(livro: Livro): Observable<Livro> {
+    const url = '${this.baseUrl}/${id}'
+    return this.http.put<Livro>(url, livro)
   }
 
 }

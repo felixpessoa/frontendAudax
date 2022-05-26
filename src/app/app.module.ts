@@ -22,6 +22,11 @@ import { LivroCrudComponent } from './views/livro-crud/livro-crud.component';
 import { LivroCreateComponent } from './components/livro/livro-create/livro-create.component';
 import {HttpClientModule} from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
+import { LivroReadComponent } from './components/livro/livro-read/livro-read.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { LivroUpdateComponent } from './components/livro/livro-update/livro-update.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +36,9 @@ import { FormsModule } from '@angular/forms';
     NavComponent,
     HomeComponent,
     LivroCrudComponent,
-    LivroCreateComponent
+    LivroCreateComponent,
+    LivroReadComponent,
+    LivroUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +53,10 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,18 @@
+<mat-card>
+    <mat-card-title>Alterar Livro</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Título do livro" 
+                [(ngModel)]="livro.nome" name="nome">
+        </mat-form-field>
+    </form>
+
+
+<button mat-raised-button (click)="updateLivro()" color="primary" >
+    Salvar
+</button>
+
+<button mat-raised-button (click)="cancel()">
+    Cancelar
+</button>
+</mat-card>

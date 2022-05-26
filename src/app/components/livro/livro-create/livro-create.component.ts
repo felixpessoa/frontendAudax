@@ -1,4 +1,4 @@
-import { livro } from './../livro.model';
+import { Livro } from './../livro.model';
 import { Router } from '@angular/router';
 import { LivroService } from './../livro.service';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LivroCreateComponent implements OnInit {
 
-  livro: livro = {
+  livro: Livro = {
     nome: ''
   }
 
