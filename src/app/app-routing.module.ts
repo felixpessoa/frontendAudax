@@ -1,7 +1,9 @@
+import { BibliotecaUpdateComponent } from './components/biblioteca/biblioteca-update/biblioteca-update.component';
+import { BibliotecaCreateComponent } from './components/biblioteca/biblioteca-create/biblioteca-create.component';
 import { BibliotecarioDeleteComponent } from './components/bibliotecario/bibliotecario-delete/bibliotecario-delete.component';
 import { BibliotecarioUpdateComponent } from './components/bibliotecario/bibliotecario-update/bibliotecario-update.component';
 import { BibliotecarioCreateComponent } from './components/bibliotecario/bibliotecario-create/bibliotecario-create.component';
-import { BibliotecarioCrudComponent } from './views/bibliotecario-crud/bibliotecario-crud/bibliotecario-crud.component';
+import { BibliotecarioCrudComponent } from './views/bibliotecario-crud/bibliotecario-crud.component';
 import { LivroDeleteComponent } from './components/livro/livro-delete/livro-delete.component';
 import { LivroUpdateComponent } from './components/livro/livro-update/livro-update.component';
 import { LivroCreateComponent } from './components/livro/livro-create/livro-create.component';
@@ -47,6 +49,14 @@ const routes: Routes = [
   {
     path:"bibliotecarios/delete/:id",
     component:BibliotecarioDeleteComponent
+  },
+  {
+    path:"biblioteca/create",
+    component:BibliotecaCreateComponent
+  },
+  {
+    path:"biblioteca/update/:id",
+    component:BibliotecaUpdateComponent
   }
 ];
 

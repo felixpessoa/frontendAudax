@@ -28,11 +28,15 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { LivroUpdateComponent } from './components/livro/livro-update/livro-update.component';
 import { LivroDeleteComponent } from './components/livro/livro-delete/livro-delete.component';
-import { BibliotecarioCrudComponent } from './views/bibliotecario-crud/bibliotecario-crud/bibliotecario-crud.component';
+import { BibliotecarioCrudComponent } from './views/bibliotecario-crud/bibliotecario-crud.component';
 import { BibliotecarioCreateComponent } from './components/bibliotecario/bibliotecario-create/bibliotecario-create.component';
 import { BibliotecarioReadComponent } from './components/bibliotecario/bibliotecario-read/bibliotecario-read.component';
 import { BibliotecarioUpdateComponent } from './components/bibliotecario/bibliotecario-update/bibliotecario-update.component';
 import { BibliotecarioDeleteComponent } from './components/bibliotecario/bibliotecario-delete/bibliotecario-delete.component';
+import { BibliotecaCreateComponent } from './components/biblioteca/biblioteca-create/biblioteca-create.component';
+import { BibliotecaCrudComponent } from './views/biblioteca-crud/biblioteca-crud.component';
+import { BibliotecaReadComponent } from './components/biblioteca/biblioteca-read/biblioteca-read.component';
+import { BibliotecaUpdateComponent } from './components/biblioteca/biblioteca-update/biblioteca-update.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,11 @@ import { BibliotecarioDeleteComponent } from './components/bibliotecario/bibliot
     BibliotecarioCreateComponent,
     BibliotecarioReadComponent,
     BibliotecarioUpdateComponent,
-    BibliotecarioDeleteComponent
+    BibliotecarioDeleteComponent,
+    BibliotecaCreateComponent,
+    BibliotecaCrudComponent,
+    BibliotecaReadComponent,
+    BibliotecaUpdateComponent
   ],
   imports: [
     BrowserModule,

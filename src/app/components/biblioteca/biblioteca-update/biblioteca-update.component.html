@@ -1,0 +1,36 @@
+<mat-card>
+    <mat-card-title>Atualizar Empresa</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Registro" 
+                [(ngModel)]="biblioteca.id" name="nome">
+        </mat-form-field>
+    </form>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Empresa" 
+                [(ngModel)]="biblioteca.nome" name="nome">
+        </mat-form-field>
+    </form>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Data do Cadastro" 
+                [(ngModel)]="biblioteca.dataCadastro" name="nome" disabled>
+        </mat-form-field>
+    </form>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Livros" 
+                [(ngModel)]="livro" name="nome">
+        </mat-form-field>
+    </form>
+
+
+<button mat-raised-button (click)="updateLivro()" color="primary" >
+    Atualizar
+</button>
+
+<button mat-raised-button (click)="cancel()">
+    Cancelar
+</button>
+</mat-card>

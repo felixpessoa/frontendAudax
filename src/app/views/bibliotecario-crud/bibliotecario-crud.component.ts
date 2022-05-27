@@ -1,5 +1,5 @@
+import { HeaderService } from './../../components/template/footer/header.service';
 import { Router } from '@angular/router';
-import { HeaderService } from './../../../components/template/footer/header.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
