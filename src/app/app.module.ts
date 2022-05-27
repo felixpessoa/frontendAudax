@@ -27,6 +27,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { LivroUpdateComponent } from './components/livro/livro-update/livro-update.component';
+import { LivroDeleteComponent } from './components/livro/livro-delete/livro-delete.component';
+import { BibliotecarioCrudComponent } from './views/bibliotecario-crud/bibliotecario-crud/bibliotecario-crud.component';
+import { BibliotecarioCreateComponent } from './components/bibliotecario/bibliotecario-create/bibliotecario-create.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { LivroUpdateComponent } from './components/livro/livro-update/livro-upda
     LivroCrudComponent,
     LivroCreateComponent,
     LivroReadComponent,
-    LivroUpdateComponent
+    LivroUpdateComponent,
+    LivroDeleteComponent,
+    BibliotecarioCrudComponent,
+    BibliotecarioCreateComponent
   ],
   imports: [
     BrowserModule,

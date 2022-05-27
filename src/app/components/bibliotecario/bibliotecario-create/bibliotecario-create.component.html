@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-card-title>Novo Bibliotecario</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" 
+                [(ngModel)]="bibliotecario.nome" name="nome">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Empresa" 
+                [(ngModel)]="bibliotecario.bibliotecas" name="bibliotecas">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Status" 
+                [(ngModel)]="bibliotecario.status" name="status">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Admin" 
+                [(ngModel)]="bibliotecario.admin" name="admin">
+        </mat-form-field>
+    </form>
+
+
+<button mat-raised-button (click)="createBibliotecario()" color="primary" >
+    Salvar
+</button>
+
+<button mat-raised-button (click)="cancel()">
+    Cancelar
+</button>
+</mat-card>
