@@ -30,6 +30,9 @@ import { LivroUpdateComponent } from './components/livro/livro-update/livro-upda
 import { LivroDeleteComponent } from './components/livro/livro-delete/livro-delete.component';
 import { BibliotecarioCrudComponent } from './views/bibliotecario-crud/bibliotecario-crud/bibliotecario-crud.component';
 import { BibliotecarioCreateComponent } from './components/bibliotecario/bibliotecario-create/bibliotecario-create.component';
+import { BibliotecarioReadComponent } from './components/bibliotecario/bibliotecario-read/bibliotecario-read.component';
+import { BibliotecarioUpdateComponent } from './components/bibliotecario/bibliotecario-update/bibliotecario-update.component';
+import { BibliotecarioDeleteComponent } from './components/bibliotecario/bibliotecario-delete/bibliotecario-delete.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ import { BibliotecarioCreateComponent } from './components/bibliotecario/bibliot
     LivroUpdateComponent,
     LivroDeleteComponent,
     BibliotecarioCrudComponent,
-    BibliotecarioCreateComponent
+    BibliotecarioCreateComponent,
+    BibliotecarioReadComponent,
+    BibliotecarioUpdateComponent,
+    BibliotecarioDeleteComponent
   ],
   imports: [
     BrowserModule,

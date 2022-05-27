@@ -25,7 +25,7 @@ export class BibliotecarioCreateComponent implements OnInit {
 
   createBibliotecario(): void {
     this.bibliotecarioService.create(this.bibliotecario).subscribe(() =>{
-      this.bibliotecarioService.showMessage('Funcionario salvo com sucesso!')
+      this.bibliotecarioService.showMessage('Prestador salvo com sucesso!')
         this.router.navigate(['/bibliotecarios'])
     })
   }
