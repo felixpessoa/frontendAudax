@@ -4,7 +4,7 @@ export interface Biblioteca {
     id?: number
     nome: string
     dataCadastro?: Date
-    livros?:Livro[]
-    bibliotecario?: Bibliotecario[]
+    bibliotecarios?: Bibliotecario[]
+    livros?: Livro[]
 
 }

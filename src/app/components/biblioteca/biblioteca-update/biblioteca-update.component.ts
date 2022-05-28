@@ -11,10 +11,12 @@ import { Component, OnInit } from '@angular/core';
 export class BibliotecaUpdateComponent implements OnInit {
 
   biblioteca: Biblioteca
-  livros: any[] = new Array
-  nomeLivro = [];
+  bibliotecarios: Biblioteca[]
 
-  livro = 'Livro Teste;'
+
+  displayedColumns = ['id', 'nome', 'dataCriacao', 'action']
+  
+  
 
   constructor(
     private bibliotecaService: BibliotecaService,
@@ -26,14 +28,11 @@ export class BibliotecaUpdateComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id')
     this.bibliotecaService.readById(id).subscribe(biblioteca => {
       this.biblioteca = biblioteca;
-      this.nomeLivro = biblioteca.livros
-      console.log(this.nomeLivro)
-
-
-
-      console.log('biblioteca', this.biblioteca)
-
+      console.log(JSON.stringify(this.biblioteca))
+      this.bibliotecarios = this.biblioteca.bibliotecarios
+      console.log(JSON.stringify(this.bibliotecarios))
     });
+    
   }
 
   updateBiblioteca(): void {
