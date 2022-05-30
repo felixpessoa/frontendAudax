@@ -1,17 +1,15 @@
-import { TokenReponse } from './tokenReponse.model';
-import { Observable } from 'rxjs';
-import { Usuario } from './usuario.model';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CreateAccountComponent } from './create-account/create-account.component';
 import { Injectable } from '@angular/core';
+import jwt_decode from 'jwt-decode';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccountService {
 
-  baseUrl = "http://localhost:8090/api/usuario/auth"
+  baseUrl = "/api/usuario/auth"
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
@@ -21,14 +19,14 @@ export class AccountService {
       duration: 3000,
       horizontalPosition: "right",
       verticalPosition: "top",
-      panelClass: isError ? ['msg-error'] : ['msg-success']
+      panelClass: 'msg-error'
     })
   }
 
-  async login(tokenReponse : TokenReponse) {
+  async login(user : any) {
     //  this.http.post<any>(`${this.baseUrl}`, user).subscribe()
 
-    const url = await this.http.post<TokenReponse>(`${this.baseUrl}`,tokenReponse).toPromise();
+    const url = await this.http.post<any>(`${this.baseUrl}`,user).toPromise();
     if (url && url.token) {
       window.localStorage.setItem('token', url.token);
       return true
@@ -37,12 +35,46 @@ export class AccountService {
     return false;
   }
 
-  createAccount(account: any) {
-    return new Promise((resolve) => {
-      resolve;
-    });
+  getAuthorizationToken() {
+    const token = window.localStorage.getItem('token');
+    return token;
   }
 
+  getTokenExpirationDate(token: string): Date {
+    const decoded: any = jwt_decode(token);
+
+    if (decoded.exp === undefined) {
+      return null;
+    }
+
+    const date = new Date(0);
+    date.setUTCSeconds(decoded.exp);
+    return date;
+  }
+
+  isTokenExpired(token?: string): boolean {
+    if (!token) {
+      return true;
+    }
+
+    const date = this.getTokenExpirationDate(token);
+    if (date === undefined) {
+      return false;
+    }
+
+    return !(date.valueOf() > new Date().valueOf());
+  }
+
+  isUserLoggedIn() {
+    const token = this.getAuthorizationToken();
+    if (!token) {
+      return false;
+    } else if (this.isTokenExpired(token)) {
+      return false;
+    }
+
+    return true;
+  }
 
 
 }

@@ -43,6 +43,7 @@ import { BibliotecaReadComponent } from './components/biblioteca/biblioteca-read
 import { BibliotecaUpdateComponent } from './components/biblioteca/biblioteca-update/biblioteca-update.component';
 import { LoginComponent } from './components/account/login/login.component';
 import { CreateAccountComponent } from './components/account/create-account/create-account.component';
+import { httpInterceptorProviders } from './components/http-interceptors';
 
 
 @NgModule({
@@ -89,7 +90,9 @@ import { CreateAccountComponent } from './components/account/create-account/crea
     MatSortModule,
     MatSelectModule
   ],
-  providers: [],
+  providers: [
+    httpInterceptorProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

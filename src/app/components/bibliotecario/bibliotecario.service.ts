@@ -11,7 +11,7 @@ import { EMPTY, Observable } from 'rxjs';
 })
 export class BibliotecarioService {
 
-  baseUrl = "http://localhost:8090/api/bibliotecarios"
+  baseUrl = "/api/bibliotecarios"
 
   
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
