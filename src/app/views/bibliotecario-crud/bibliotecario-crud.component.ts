@@ -11,7 +11,7 @@ export class BibliotecarioCrudComponent implements OnInit {
 
   constructor(private router: Router, private headerService: HeaderService) {
     headerService.headerData = {
-      title: 'Cadastro de Bibliotecario',
+      title: 'Bibliotecario',
       icon:' badge',
       routeUrl:'/bibliotecarios'
     }

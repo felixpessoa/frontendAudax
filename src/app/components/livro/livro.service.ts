@@ -13,7 +13,7 @@ import { catchError, map } from 'rxjs/operators'
 })
 export class LivroService {
 
-  baseUrl = "https://audax-biblioteca.herokuapp.com/api/livros"
+  baseUrl = "http://localhost:8090/api/livros"
   // baseUrl = "http://localhost:8090/api/livros"
 
 

@@ -1,9 +1,14 @@
-export interface Bibliotecario{
+import { Biblioteca } from './../biblioteca/biblioteca.model';
+export interface Bibliotecario {
     id?: number
     nome: string
     dataCriacao?: Date
-    bibliotecas: number
+    bibliotecas?: Biblioteca[]
     status?: string
-    admin?:boolean
+    usuario: {
+        login:string,
+        password:string
+        admin?:boolean
+    }
 
 }

@@ -12,7 +12,13 @@ export class BibliotecaCrudComponent implements OnInit {
   constructor(
     private router:Router,
     private headerService: HeaderService
-  ) { }
+  ) {
+    headerService.headerData = {
+      title: 'Biblioteca',
+      icon:' home',
+      routeUrl:'/'
+    }
+   }
 
   ngOnInit(): void {
   }

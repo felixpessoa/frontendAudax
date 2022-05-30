@@ -1,3 +1,8 @@
+import { AuthGuard } from './components/account/auth.guard';
+import { AuthenticationComponent } from './views/authentication/authentication.component';
+import { CreateAccountComponent } from './components/account/create-account/create-account.component';
+import { LoginComponent } from './components/account/login/login.component';
+import { BibliotecaCrudComponent } from './views/biblioteca-crud/biblioteca-crud.component';
 import { BibliotecaUpdateComponent } from './components/biblioteca/biblioteca-update/biblioteca-update.component';
 import { BibliotecaCreateComponent } from './components/biblioteca/biblioteca-create/biblioteca-create.component';
 import { BibliotecarioDeleteComponent } from './components/bibliotecario/bibliotecario-delete/bibliotecario-delete.component';
@@ -16,47 +21,78 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: "",
-    component: HomeComponent
+    component: HomeComponent,
+    children: [
+      {
+        path: "",
+        component: BibliotecaCrudComponent
+      },
+      {
+        path: "biblioteca/create",
+        component: BibliotecaCreateComponent
+      },
+      {
+        path: "biblioteca/update/:id",
+        component: BibliotecaUpdateComponent
+      },
+      {
+        path: "livros",
+        component: LivroCrudComponent
+      },
+      {
+        path: "livros/create",
+        component: LivroCreateComponent
+      },
+      {
+        path: "livros/update/:id",
+        component: LivroUpdateComponent
+      },
+      {
+        path: "livros/delete/:id",
+        component: LivroDeleteComponent
+      },
+      {
+        path: "bibliotecarios",
+        component: BibliotecarioCrudComponent
+      },
+      // {
+      //   path: "bibliotecarios/create",
+      //   component: BibliotecarioCreateComponent
+      // },
+      {
+        path: "bibliotecarios/update/:id",
+        component: BibliotecarioUpdateComponent
+      },
+      {
+        path: "bibliotecarios/delete/:id",
+        component: BibliotecarioDeleteComponent
+      }
+    ]
+    ,
+    canActivate: [AuthGuard]
   },
   {
-    path:"livros",
-    component:LivroCrudComponent
-  },
-  {
-    path:"livros/create",
-    component:LivroCreateComponent
-  },
-  {
-    path:"livros/update/:id",
-    component:LivroUpdateComponent
-  },
-  {
-    path:"livros/delete/:id",
-    component:LivroDeleteComponent
-  },
-  {
-    path:"bibliotecarios",
-    component:BibliotecarioCrudComponent
-  },
-  {
-    path:"bibliotecarios/create",
-    component:BibliotecarioCreateComponent
-  },
-  {
-    path:"bibliotecarios/update/:id",
-    component:BibliotecarioUpdateComponent
-  },
-  {
-    path:"bibliotecarios/delete/:id",
-    component:BibliotecarioDeleteComponent
-  },
-  {
-    path:"biblioteca/create",
-    component:BibliotecaCreateComponent
-  },
-  {
-    path:"biblioteca/update/:id",
-    component:BibliotecaUpdateComponent
+    path: "",
+    component: AuthenticationComponent,
+    children: [
+      {
+        path: "", 
+        redirectTo: 'login', 
+        pathMatch: 'prefix'
+      },
+      {
+        path: "login",
+        component: LoginComponent
+      },
+      {
+        path: "create-account",
+        component: CreateAccountComponent
+      },
+      {
+        path: "bibliotecarios/create",
+        component: BibliotecarioCreateComponent
+      }
+    ]
   }
 ];
 

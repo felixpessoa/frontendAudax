@@ -1,3 +1,4 @@
+import { AuthenticationComponent } from './views/authentication/authentication.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -14,6 +15,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+
+
 
 import { FooterComponent } from './components/template/footer/footer.component';
 import { NavComponent } from './components/template/nav/nav.component';
@@ -37,6 +41,9 @@ import { BibliotecaCreateComponent } from './components/biblioteca/biblioteca-cr
 import { BibliotecaCrudComponent } from './views/biblioteca-crud/biblioteca-crud.component';
 import { BibliotecaReadComponent } from './components/biblioteca/biblioteca-read/biblioteca-read.component';
 import { BibliotecaUpdateComponent } from './components/biblioteca/biblioteca-update/biblioteca-update.component';
+import { LoginComponent } from './components/account/login/login.component';
+import { CreateAccountComponent } from './components/account/create-account/create-account.component';
+
 
 @NgModule({
   declarations: [
@@ -58,7 +65,10 @@ import { BibliotecaUpdateComponent } from './components/biblioteca/biblioteca-up
     BibliotecaCreateComponent,
     BibliotecaCrudComponent,
     BibliotecaReadComponent,
-    BibliotecaUpdateComponent
+    BibliotecaUpdateComponent,
+    LoginComponent,
+    CreateAccountComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +86,8 @@ import { BibliotecaUpdateComponent } from './components/biblioteca/biblioteca-up
     FormsModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

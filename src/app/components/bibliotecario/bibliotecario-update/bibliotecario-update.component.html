@@ -6,16 +6,12 @@
                 [(ngModel)]="bibliotecario.nome" name="nome">
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Empresa" 
-                [(ngModel)]="bibliotecario.bibliotecas" name="bibliotecas">
+            <input matInput placeholder="Data de cadastro" 
+                [value]="bibliotecario.dataCriacao" name="dataCriacao" disabled>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Status" 
                 [(ngModel)]="bibliotecario.status" name="status">
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Admin" 
-                [(ngModel)]="bibliotecario.admin" name="admin">
         </mat-form-field>
     </form>
 

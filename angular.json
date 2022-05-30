@@ -90,7 +90,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "frontendAudax:build"
+            "browserTarget": "frontendAudax:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
