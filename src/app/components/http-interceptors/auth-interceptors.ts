@@ -15,8 +15,8 @@ export class AuthInterceptor implements HttpInterceptor {
 
     const token = this.accountService.getAuthorizationToken();
     let request: HttpRequest<any> = req;
-    // && !this.accountService.isTokenExpired(token)
-    if (token ) {
+     
+    if (token && !this.accountService.isTokenExpired(token)) {
     
       request = req.clone({
         headers: req.headers.set('Authorization', `Bearer ${token}`)
