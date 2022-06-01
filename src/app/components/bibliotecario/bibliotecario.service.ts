@@ -11,7 +11,7 @@ import { EMPTY, Observable } from 'rxjs';
 })
 export class BibliotecarioService {
 
-  baseUrl = "/api/bibliotecarios"
+  baseUrl = "https://audax-biblioteca.herokuapp.com/api/bibliotecarios"
 
   
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }

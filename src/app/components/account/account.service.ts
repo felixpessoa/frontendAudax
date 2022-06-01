@@ -10,7 +10,7 @@ import jwt_decode from 'jwt-decode';
 })
 export class AccountService {
 
-  baseUrl = "/api/usuario/auth"
+  baseUrl = "https://audax-biblioteca.herokuapp.com/api/usuario/auth"
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 

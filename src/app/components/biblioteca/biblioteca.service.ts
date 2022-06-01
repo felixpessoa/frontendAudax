@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 })
 export class BibliotecaService {
 
-  baseUrl = "/api/bibliotecas"
+  baseUrl = "https://audax-biblioteca.herokuapp.com/api/bibliotecas"
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 

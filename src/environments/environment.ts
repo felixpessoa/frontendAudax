@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  api: 'http://localhost:8090'
+  production: true,
+  api: 'https://audax-biblioteca.herokuapp.com/'
 };
 
 /*
